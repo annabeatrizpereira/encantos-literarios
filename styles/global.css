@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pink-light: #c59dd2;
+  --pink-base: #9547a5;
+  --pink-dark: #7d298a;
+  --pink-low: #3f0f41;
+  --blue-light: #73b6d2;
+  --blue-base: #358bb9;
+  --blue-mid: #2374a4;
+  --blue-dark: #144a72;
+  --blue-low: #08233c;
+  --shape-stroke: #002347;
+  --shape-hover: #001933;
+  --shape-base: #000f1f;
+  --shape-background: #00050a;
+  --text-title: #f8fbfb;
+  --text-body: #e2e7e9;
+  --text-label: #bac6c9;
+
+  --font-family: "Raleway", sans-serif;
+
+  --font-title-lg: bold 48px/100% var(--font-family);
+  --font-title-md: bold 40px/100% var(--font-family);
+  --font-title-sm: bold 32px/100% var(--font-family);
+  --font-title-xs: bold 16px/100% var(--font-family);
+
+  --font-subtitle: 500 32px/200% var(--font-family);
+
+  --font-body-lg: 400 20px/140% var(--font-family);
+  --font-body-md: 400 16px/140% var(--font-family);
+  --font-body-sm: 400 14px/140% var(--font-family);
+  --font-body-xs: 400 12px/140% var(--font-family);
+
+  --font-button: bold 14px/100% var(--font-family);
+  --font-link: 500 14px/100% var(--font-family);
+  --font-tag: bold 10px/100% var(--font-family);
+}
+
+body {
+    background-color: var(--shape-background);
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* buttons */
+button {
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--text-title);
+  font: var(--font-button);
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  transition: background-color 300ms linear;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1 / 1;
+  transition: width 1s ease, height 1s ease;
+  z-index: -1;
+}
+
+.btn-purple::before {
+  background-color: var(--pink-base);
+}
+
+.btn-blue::before{
+  background-color: var(--blue-mid);
+}
+
+button:hover::before {
+  width: 250%;
+  height: 450%;
+}
+
+.btn-purple {
+  background-color: var(--pink-dark);
+}
+
+.btn-blue {
+  background-color: var(--blue-dark);
+}
+
+/* links */
+a {
+  color: var(--blue-light);
+  text-decoration: none;
+  font: var(--font-link);
+  transition: color 400ms ease-in-out;
+}
+
+a:hover {
+  color: var(--text-body);
+}
+
+
